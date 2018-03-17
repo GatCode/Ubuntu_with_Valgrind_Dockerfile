@@ -2,7 +2,7 @@
 # title:       Ubuntu with Valgrind Dockerfile
 #
 # description: creates a docker image with valgrind, ncurses, cmake 3.11,
-# description: gcc/++-7 and the German ISO-8859-1 charset
+# description: gcc/++-7, OpenCV and the German ISO-8859-1 charset
 #
 # author:      GatCode
 # year:        2018
@@ -21,6 +21,8 @@ RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get update
 RUN apt-get install -y gcc-7 g++-7
+RUN apt-get update
+RUN apt-get install -y libopencv-dev
 
 # Install character encoding
 RUN apt-get install -y locales
